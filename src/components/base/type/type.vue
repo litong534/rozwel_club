@@ -5,7 +5,10 @@
         <div class="label label_purple" v-if="props === 3"><slot></slot></div>
         <div class="label label_orange" v-if="props === 4"><slot></slot></div>
         <div class="label label_pink" v-if="props === 5"><slot></slot></div>
-        <div class="label label_leafgreen" v-if="props === 6"><slot></slot></div>
+        <div class="label label_nodejs" v-if="props === 6"><slot></slot></div>
+        <div class="label label_webpack" v-if="props === 7"><slot></slot></div>
+        <div class="label label_leafgreen" v-if="props === 8"><slot></slot></div>
+        <div class="label label_other" v-if="props === 999"><slot></slot></div>
         <div class="label label_blue" v-if="!props"><slot></slot></div>
     </div>
 </template>
@@ -56,6 +59,17 @@ export default {
 
     .label_leafgreen {
         background-color: #0ac6d7;
+    }
+
+    .label_nodejs {
+        background-color: #026e00;
+    }
+
+    .label_webpack {
+        background-color: #2b3a42;
+    }
+    .label_other {
+        background-color: #1a1a1a;
     }
 }
 </style>

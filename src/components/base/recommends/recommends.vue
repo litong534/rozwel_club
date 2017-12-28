@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <div class="container-recommend">
-      <div  class="recommend" v-for="d in rec" :key="d.key">
+      <div  class="recommend" v-if="isLoaded" v-for="d in rec" :key="d.key">
         <recommend :data="d"></recommend>
       </div>
-      <loading v-if="!isLoading"></loading>
+      <loading v-else></loading>
     </div>
     <div class="container-category">
       <category :category="category" @setCategory="selectCategory"></category>
@@ -32,7 +32,8 @@ export default {
       rec: [],
       category: [],
       isLogined: false,
-      isLoading: false
+      isLoaded: false,
+      currentIndex: -1
     };
   },
   created() {
@@ -44,20 +45,24 @@ export default {
   },
   methods: {
     selectCategory(index) {
-      this.isLoading = false;
+      if(index === this.currentIndex) {
+        return;
+      }
+      this.currentIndex = index;
+      this.isLoaded = false;
       if (index === -1) {
         this._getRecommends();
       } else {
         getRecommendByTypes(index).then(res => {
           this.rec = res.data;
-          this.isLoading = true;
+          this.isLoaded = true;
         });
       }
     },
     _getRecommends() {
       getRecommends().then(res => {
         this.rec = res.data;
-        this.isLoading = true;
+        this.isLoaded = true;
       });
     },
     _getCategory() {

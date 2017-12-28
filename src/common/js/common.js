@@ -42,6 +42,12 @@ function typeFormat(type) {
             return 'vue';
             break;
         case 6:
+            return 'nodejs';
+            break;
+        case 7:
+            return 'webpack';
+            break;
+        case 8:
             return 'jquery';
             break;
         default:
@@ -84,5 +90,6 @@ function setImageToLS(image) {
     localStorage.setItem('user', JSON.stringify(user));
 }
 
-export const SERVER_UPLOADS = 'http://<hosts>/api/uploads';
+export const SERVER_UPLOADS = 'http://<host>/api/uploads';
+// export const SERVER_UPLOADS = 'http://localhost:3001/api/uploads';
 export { checkEmailReg, checkPasswordReg, checkNickName, mongoTimeFormat, typeFormat, getConstellation, getSex, getUserEmail, setImageToLS };
