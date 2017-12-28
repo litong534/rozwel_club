@@ -16,7 +16,6 @@
 import Type from "@/components/base/type/type";
 import { mongoTimeFormat, typeFormat } from '@/common/js/common';
 import * as moment from 'moment';
-import { mapMutations } from 'vuex';
 
 export default {
   components: {
@@ -41,10 +40,7 @@ export default {
       let fData = data;
       fData.create_dt = mongoTimeFormat(fData.create_dt);
       return fData;
-    },
-    ...mapMutations({
-      setArticle:'SET_ARTICLE'
-    })
+    }
   }
 };
 </script>

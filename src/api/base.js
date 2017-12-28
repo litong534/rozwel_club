@@ -1,7 +1,6 @@
 import axios from 'axios';
-import ONLINE_MODE from './../config';
 
-if(ONLINE_MODE) {
+if(process.env.NODE_ENV === 'production') {
   var base = axios.create({
     baseURL: 'http://<host>/api/',
     timeout: 10000
