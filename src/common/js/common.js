@@ -50,7 +50,11 @@ function typeFormat(type) {
         case 8:
             return 'jquery';
             break;
+        case 19:
+            return 'others';
+            break;
         default:
+            return 'others';
             break;
     }
 }
@@ -90,6 +94,6 @@ function setImageToLS(image) {
     localStorage.setItem('user', JSON.stringify(user));
 }
 
-export const SERVER_UPLOADS = 'http://<host>/api/uploads';
+export const SERVER_UPLOADS = 'http://47.95.250.143:3001/api/uploads';
 // export const SERVER_UPLOADS = 'http://localhost:3001/api/uploads';
 export { checkEmailReg, checkPasswordReg, checkNickName, mongoTimeFormat, typeFormat, getConstellation, getSex, getUserEmail, setImageToLS };

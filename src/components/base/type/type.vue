@@ -8,7 +8,7 @@
         <div class="label label_nodejs" v-if="props === 6"><slot></slot></div>
         <div class="label label_webpack" v-if="props === 7"><slot></slot></div>
         <div class="label label_leafgreen" v-if="props === 8"><slot></slot></div>
-        <div class="label label_other" v-if="props === 999"><slot></slot></div>
+        <div class="label label_other" v-if="props === 19"><slot></slot></div>
         <div class="label label_blue" v-if="!props"><slot></slot></div>
     </div>
 </template>

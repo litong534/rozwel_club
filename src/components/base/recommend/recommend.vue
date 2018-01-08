@@ -1,21 +1,24 @@
 <template>
-    <div class="blog-main" @click="showDetail">
-        <div class="heading-blog">{{data.title}}</div>
-        <img :src="data.src" style="width: 100%;height: 470px;" alt="">
-        <div class="blog-info">
-            <type :props="data.type" fontsize="lg">{{data.type | typeFormat}}</type>
-        </div>
-        <div class="blog-status">
-            <div>作者:{{data.author}}</div>
-            <div>{{data.create_dt | timeFormat}}</div>
-        </div>
+  <div class="blog-main" @click="showDetail">
+    <div class="heading-blog">{{data.title}}</div>
+    <div class="img_container">
+      <img :src="data.src" alt="">
     </div>
+    <div class="blog-info">
+      <type :props="data.type" fontsize="lg">{{data.type | typeFormat}}</type>
+    </div>
+    <div class="blog-status">
+      <div>作者:{{data.author}}</div>
+      <div>{{data.create_dt | timeFormat}}</div>
+    </div>
+  </div>
 </template>
 
 <script>
 import Type from "@/components/base/type/type";
-import { mongoTimeFormat, typeFormat } from '@/common/js/common';
-import * as moment from 'moment';
+import { mongoTimeFormat, typeFormat } from "@/common/js/common";
+import * as moment from "moment";
+import { mapMutations } from "vuex";
 
 export default {
   components: {
@@ -23,14 +26,12 @@ export default {
   },
   props: ["data"],
   filters: {
-      timeFormat(time) {
-          return moment(time).format('YYYY年MM月DD日');
-      },
-      typeFormat
-
+    timeFormat(time) {
+      return moment(time).format("YYYY年MM月DD日");
+    },
+    typeFormat
   },
-  created() {
-  },
+  created() {},
   methods: {
     showDetail() {
       this.$router.push(`article/${this.data._id}`);
@@ -40,13 +41,16 @@ export default {
       let fData = data;
       fData.create_dt = mongoTimeFormat(fData.create_dt);
       return fData;
-    }
+    },
+    ...mapMutations({
+      setArticle: "SET_ARTICLE"
+    })
   }
 };
 </script>
 
 <style lang="scss" scoped>
-@import '~common/style/variable';
+@import "~common/style/variable";
 .blog-main {
   width: 85%;
   display: flex;
@@ -56,6 +60,19 @@ export default {
   background-color: #fafafa;
   box-shadow: 1px 1px 3px #999;
   cursor: pointer;
+  .img_container {
+    width: 100%;
+    height: 0;
+    padding-top: 420px;
+    position: relative;
+    overflow: hidden;
+    & img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
   .heading-blog {
     font-size: 30px;
     color: #065883;

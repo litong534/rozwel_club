@@ -2,7 +2,7 @@ import axios from 'axios';
 
 if(process.env.NODE_ENV === 'production') {
   var base = axios.create({
-    baseURL: 'http://<host>/api/',
+    baseURL: 'http://47.95.250.143:3001/api/',
     timeout: 10000
   });
 }else {
