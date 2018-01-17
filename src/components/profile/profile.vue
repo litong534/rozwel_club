@@ -137,14 +137,14 @@ export default {
     color: #333;
     display: flex;
     flex-flow: row nowrap;
-    width: 60%;
+    max-width: 900px;
     margin: 0 auto;
     margin-top: 50px;
+    justify-content: space-around;
     .row {
-      width: 100%;
       display: flex;
       flex-flow: row wrap;
-      justify-content: flex-end;
+      width: 325px;
       .elem {
         margin-bottom: 20px;
         margin-right: 20px;

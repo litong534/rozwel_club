@@ -1,6 +1,8 @@
+@import "./media.scss";
 html {
   height: 100%;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 html body {
     width: 100%;

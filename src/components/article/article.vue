@@ -39,9 +39,11 @@ export default {
 
 <style lang="scss" scoped>
 .art_container {
-  width: 1170px;
   margin: 0 auto;
+  max-width: 1170px;
   display: flex;
+  padding: 0 20px;
+  box-sizing: border-box;
   flex-flow: row nowrap;
   margin-top: 20px;
   .article {
@@ -58,8 +60,6 @@ export default {
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-between;
-      .author {
-      }
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="t-container">
         <div>涉猎技术：</div>
         <img src="~assets/img/html.jpg" alt="">
         <img src="~assets/img/css.jpg" alt="">
@@ -18,9 +18,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-    width: 1170px;
+.t-container {
     margin: 0 auto;
+    max-width: 1170px;
     padding-top: 20px;
     display: flex;
     flex-flow: row nowrap;

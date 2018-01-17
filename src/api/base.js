@@ -2,12 +2,12 @@ import axios from 'axios';
 
 if(process.env.NODE_ENV === 'production') {
   var base = axios.create({
-    baseURL: 'http://47.95.250.143:3001/api/',
+    baseURL: '<your url>',
     timeout: 10000
   });
 }else {
   var base = axios.create({
-    baseURL: 'http://localhost:3001/api/',
+    baseURL: '<your url>',
     timeout: 10000
   });
 }

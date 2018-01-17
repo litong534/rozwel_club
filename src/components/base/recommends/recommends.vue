@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="main-container">
     <div class="container-recommend">
       <div  class="recommend" v-if="isLoaded" v-for="d in rec" :key="d.key">
         <recommend :data="d"></recommend>
@@ -78,11 +78,12 @@ export default {
 <style lang="scss" scoped>
 @import "~common/style/variable";
 
-.container {
-  width: 1170px;
+.main-container {
   margin: 0 auto;
   display: flex;
+  max-width: 1170px;
   flex-flow: row nowrap;
+  justify-content: space-between;
   padding-top: 30px;
   .container-recommend {
     width: 75%;

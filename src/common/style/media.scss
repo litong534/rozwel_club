@@ -1,0 +1,97 @@
+@media screen and (max-width: 980px){
+  #app {
+    width: 100% !important;
+  }
+  .cheader {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex-flow: column nowrap !important;
+    .authorImg {
+      min-width: 80px !important;
+      min-height: 80px !important;
+      background-size: 80px 80px !important;
+    }
+    .author {
+      .title {
+        font-size: 24px !important;
+      }
+      .content {
+        font-size: 14px !important;
+      }
+    }
+  }
+  .t-container {
+    max-width: 80% !important;
+    & > div {
+        font-size: 14px !important;
+    }
+    & > img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+  }
+  .blog-main {
+    .img_container {
+      padding-top: 75% !important;
+    }
+    .heading-blog {
+      font-size: 20px !important;
+      padding: 10px 5px !important;
+    }
+    .blog-status {
+      font-size: 14px !important;
+    }
+  }
+  .art_container {
+    max-width: 100% !important;
+    width: 100% !important;
+    .title {
+      font-size: 20px !important;
+      width: 100% !important;
+    }
+    img {
+      width: 60% !important;
+      margin: 0 auto !important;
+    }
+  }
+  .main-container {
+    max-width: 100% !important;
+  }
+  .l-container {
+    // justify-content: center !important;
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 750px){
+  .l-container {
+    // justify-content: center !important;
+    display: none !important;
+  }
+  .t-container {
+    display: none !important;
+  }
+  .lor-container {
+    .header {
+      font-size: 28px !important;
+      margin-bottom: 20px !important;
+    }
+  }
+  .main-container {
+    flex-flow: column-reverse nowrap !important;
+    padding-top: 0 !important;
+  }
+  .container-recommend {
+    padding: 0 8px !important;
+    margin-top: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    .blog-main {
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+  }
+  .container-category {
+    width: 100% !important;
+  }
+}

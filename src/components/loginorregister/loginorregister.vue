@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
+  <div class="lor-container">
       <div class="panel">
         <div class="header">罗兹威尔前端俱乐部</div>
         <div class="routerlink">
-          <router-link to="register"><div class="reg">注册</div></router-link>
-          <router-link to="login"><div class="login">登录</div></router-link>
+          <router-link to="register" replace><div class="reg">注册</div></router-link>
+          <router-link to="login" replace><div class="login">登录</div></router-link>
         </div>
         <router-view></router-view>
       </div>
@@ -22,7 +22,7 @@ export default {
 <style lang="scss" scoped>
 @import "~common/style/variable.scss";
 
-.container {
+.lor-container {
   position: absolute;
   top: 0;
   left: 0;

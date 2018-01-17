@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div class="l-container">
   <div class="user_block" v-if="isLogined">
     <img :src="user.image" v-if="user.image" alt="">
     <span v-else class="fa fa-user-circle"></span>
@@ -56,7 +56,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "~common/style/variable.scss";
-.container {
+.l-container {
   background-color: $defaultBlue;
   height: 70px;
   display: flex;

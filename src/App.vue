@@ -73,7 +73,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
-  min-width: 1170px;
   font-size: 16px;
   height:100%;
   .material {
