@@ -81,6 +81,22 @@
   .main-container {
     flex-flow: column-reverse nowrap !important;
     padding-top: 0 !important;
+    .category-ul {
+      width: 100%;
+      overflow-x: scroll;
+      display: flex;
+      flex-flow: row nowrap;
+      font-size: 12px;
+      .category-item {
+        min-width: 25%;
+        border-left: 0;
+        border-bottom: 2px solid #ddd;
+        &.activate {
+          border-left: 0;
+          border-bottom: 2px solid blue;
+        }
+      }
+    }
   }
   .container-recommend {
     padding: 0 8px !important;

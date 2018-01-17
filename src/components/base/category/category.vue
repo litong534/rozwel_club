@@ -1,7 +1,7 @@
 <template>
-  <ul>
-    <li class="item" :class="activate === 'all'?'activate':''" @click="setCategory()">全部内容</li>
-    <li v-for="(c,index) in category" :key="c.key" class="item" :class="index === activate ? 'activate' : ''" @click="setCategory(c._id,index)">
+  <ul class="category-ul">
+    <li class="category-item" :class="activate === 'all'?'activate':''" @click="setCategory()">全部内容</li>
+    <li v-for="(c,index) in category" :key="c.key" class="category-item" :class="index === activate ? 'activate' : ''" @click="setCategory(c._id,index)">
       <span>{{c._id | typeFormat}}</span>
       <type>{{c.count}}</type>
     </li>
@@ -46,9 +46,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.item {
+.category-item {
   position: relative;
-  display: block;
   padding: 10px 15px;
   margin-bottom: -1px;
   background-color: #fff;
