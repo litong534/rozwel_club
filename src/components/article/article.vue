@@ -47,7 +47,7 @@ export default {
   flex-flow: row nowrap;
   margin-top: 20px;
   .article {
-    width: inherit;
+    width: 100%;
     .title {
       font-size: 30px;
       color: #065883;

@@ -1,7 +1,7 @@
 <template>
   <ul class="category-ul">
     <li class="category-item" :class="activate === 'all'?'activate':''" @click="setCategory()">全部内容</li>
-    <li v-for="(c,index) in category" :key="c.key" class="category-item" :class="index === activate ? 'activate' : ''" @click="setCategory(c._id,index)">
+    <li v-for="(c,index) in category" :key="c.key" class="category-item" :class="index === activate ? 'activate' : ''" @click="setCategory(c._id,index,c.count)">
       <span>{{c._id | typeFormat}}</span>
       <type>{{c.count}}</type>
     </li>
@@ -30,13 +30,13 @@ export default {
     typeFormat
   },
   methods: {
-    setCategory(cid = -1, index = -1) {
+    setCategory(cid = -1, index = -1, count) {
       if(index !== -1){
         this.activate = index;
       }else {
         this.setAllC();
       }
-      this.$emit('setCategory',cid);
+      this.$emit('setCategory',{cid,count});
     },
     setAllC() {
       this.activate = 'all';

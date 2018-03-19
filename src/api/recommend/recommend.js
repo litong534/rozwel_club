@@ -1,19 +1,23 @@
 import base from '../base';
 
-function getRecommends() {
-    return base.get('/recommend');
+function getRecommends(page) {
+    return base.get(`/recommend?page=${page}`);
 }
 
 function getRecommend(id) {
     return base.get(`/recommend/single?id=${id}`);
 }
 
-function getRecommendByTypes(type) {
-    return base.get(`/recommend/types?type=${type}`);
+function getRecommendByTypes(type,page) {
+    return base.get(`/recommend/types?type=${type}&page=${page}`);
 }
 
 function getRecommendTypesCount() {
     return base.get(`/recommend/typeCount`);
 }
 
-export { getRecommends, getRecommend, getRecommendByTypes, getRecommendTypesCount };
+function getRecommendsCount() {
+    return base.get(`/recommend/count`);
+}
+
+export { getRecommends, getRecommend, getRecommendByTypes, getRecommendTypesCount, getRecommendsCount };
