@@ -7,7 +7,8 @@ router.route('/')
 	rec.recommendSave(req).then(result => res.json(result));
 })
 .get((req,res) => {
-	rec.recommendGet().then((recommend)=>{
+	const page = req.query.page;
+	rec.recommendGet(page).then((recommend)=>{
 		res.json(recommend);
 	}).catch(e => res.json(e));
 
@@ -22,7 +23,7 @@ router.route('/single')
 
 router.route('/types')
 .get((req,res) => {
-	rec.recommendGetByTypes(req.query.type).then(recommend => {
+	rec.recommendGetByTypes(req.query.type,req.query.page).then(recommend => {
 		res.json(recommend);
 	}).catch(e => res.json(e));
 });
@@ -33,4 +34,12 @@ router.route('/typeCount')
 		res.json(count);
 	}).catch(e => res.json(e));
 });
+
+router.route('/count')
+.get((req,res)=> {
+	rec.recommendGetCount().then(count => {
+		res.json(count);
+	}).catch(e => res.json(e));
+})
+
 module.exports = router;
