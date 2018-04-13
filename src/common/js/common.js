@@ -150,6 +150,6 @@ function isBottom() {
     return false;
 };
 
-export const SERVER_UPLOADS = 'http://47.95.250.143:3001/api/uploads';
+export const SERVER_UPLOADS = 'http://api.rozwel.club/api/uploads';
 // export const SERVER_UPLOADS = 'http://localhost:3001/api/uploads';
 export { checkEmailReg, checkPasswordReg, checkNickName, mongoTimeFormat, typeFormat, getConstellation, getSex, getUserEmail, setImageToLS, isBottom, once };
