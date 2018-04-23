@@ -1,21 +1,63 @@
 <template>
     <div class="label_container">
-        <div class="label label_blue" v-if="props === 1"><slot></slot></div>
-        <div class="label label_green" v-if="props === 2"><slot></slot></div>
-        <div class="label label_purple" v-if="props === 3"><slot></slot></div>
-        <div class="label label_orange" v-if="props === 4"><slot></slot></div>
-        <div class="label label_pink" v-if="props === 5"><slot></slot></div>
-        <div class="label label_nodejs" v-if="props === 6"><slot></slot></div>
-        <div class="label label_webpack" v-if="props === 7"><slot></slot></div>
-        <div class="label label_leafgreen" v-if="props === 8"><slot></slot></div>
-        <div class="label label_other" v-if="props === 19"><slot></slot></div>
-        <div class="label label_blue" v-if="!props"><slot></slot></div>
+        <TypeRenderer :typeClass="switchCateToClass(cate)"><slot></slot></TypeRenderer>
     </div>
 </template>
 
 <script>
+import TypeRenderer from './typeRenderer';
 export default {
-    props: ['props']
+    components: {
+        TypeRenderer
+    },
+    props: {
+        cate: {
+            type: Number,
+            default: undefined
+        }
+    },
+    methods: {
+        switchCateToClass(type) {
+            switch (type) {
+                case 1:
+                    return 'label_blue';
+                    break;
+                case 2:
+                    return 'label_green';
+                    break;
+                case 3:
+                    return 'label_purple';
+                    break;
+                case 4:
+                    return 'label_orange';
+                    break;
+                case 5:
+                    return 'label_pink';
+                    break;
+                case 6:
+                    return 'label_nodejs';
+                    break; 
+                case 7:
+                    return 'label_webpack';
+                    break;
+                case 8:
+                    return 'label_leafgreen';
+                    break;
+                case 9:
+                    return 'label_nginx';
+                    break; 
+                case 10:
+                    return 'label_koa';
+                    break;
+                case 19:
+                    return 'label_other';
+                    break;
+                default:
+                    return 'label_blue';
+                    break;
+            }
+        }
+    }
 }
 </script>
 
@@ -67,6 +109,14 @@ export default {
 
     .label_webpack {
         background-color: #2b3a42;
+    }
+
+    .label_nginx {
+        background-color: #9a0089;
+    }
+
+    .label_koa {
+        background-color: #bb0313;
     }
     .label_other {
         background-color: #1a1a1a;

@@ -5,7 +5,7 @@
       <img :src="data.src" alt="">
     </div>
     <div class="blog-info">
-      <type :props="data.type" fontsize="lg">{{data.type | typeFormat}}</type>
+      <type :cate="data.type" fontsize="lg">{{data.type | typeFormat}}</type>
     </div>
     <div class="blog-status">
       <div>作者:{{data.author}}</div>
